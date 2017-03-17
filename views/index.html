@@ -7,7 +7,7 @@
 <body>
 
 <div ng-app="myApp">
-    <div ng-controller="TableCtrl">
+    <div ng-controller="TableController">
         <div class="input-group">
             <input class="form-control" ng-model="searchText" placeholder="Search" type="search" ng-change="search()" />
             <span class="input-group-addon">
@@ -17,15 +17,15 @@
         <table class="table  table-hover data-table myTable">
             <thead>
             <tr>
-                <th class="EmpId"> <a href="#" ng-click="sort('name',$event)">Country
+                <th class="country"> <a href="#" ng-click="sort('name',$event)">Country
                     <span class="{{Header[0]}}"></span>
                 </a>
 
                 </th>
-                <th class="name"> <a ng-click="sort('population')" href="#"> Population
+                <th class="population"> <a ng-click="sort('population')" href="#"> Population
                     <span class="{{Header[1]}}"></span></a>
                 </th>
-                <th class="Email"> <a ng-click="sort('capital')" href="#"> Capital
+                <th class="capital"> <a ng-click="sort('capital')" href="#"> Capital
                     <span class="{{Header[2]}}"></span></a>
                 </th>
             </tr>
@@ -54,7 +54,7 @@
 
 <!-- ASSETS -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-<script src="http://underscorejs.org/underscore.js"></script>
+<script src="../app/js/underscore.js"></script>
 <!-- / -->
 
 <!--MODULES-->

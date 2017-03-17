@@ -18,3 +18,7 @@ The node application is structured in the following way
      - searchUtils.js 			- Includes functions related to search operations.
 + views
    - index.html				- home of application.
+
+
+------------------
+To start: in the root folder : python -m SimpleHTTPServer 8000

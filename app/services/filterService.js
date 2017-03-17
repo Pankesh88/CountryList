@@ -1,4 +1,4 @@
-myApp.service('filteredListService', function () {
+myApp.service('filterService', function () {
 
     this.searched = function (valLists,toSearch) {
         return _.filter(valLists,

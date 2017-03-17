@@ -1,4 +1,4 @@
-var TableCtrl = myApp.controller('TableCtrl', function ($scope, $filter, filteredListService, dataService) {
+var TableCtrl = myApp.controller('TableController', function ($scope, $filter, filterService, dataService) {
 
 
 
@@ -20,7 +20,7 @@ var TableCtrl = myApp.controller('TableCtrl', function ($scope, $filter, filtere
         };
 
         $scope.search = function () {
-            $scope.filteredList = filteredListService.searched($scope.allItems, $scope.searchText);
+            $scope.filteredList = filterService.searched($scope.allItems, $scope.searchText);
 
             if ($scope.searchText == '') {
                 $scope.filteredList = $scope.allItems;
@@ -30,7 +30,7 @@ var TableCtrl = myApp.controller('TableCtrl', function ($scope, $filter, filtere
 
         // Calculate Total Number of Pages based on Search Result
         $scope.pagination = function () {
-            $scope.ItemsByPage = filteredListService.paged( $scope.filteredList, $scope.pageSize );
+            $scope.ItemsByPage = filterService.paged( $scope.filteredList, $scope.pageSize );
         };
 
         $scope.setPage = function () {
@@ -99,4 +99,4 @@ var TableCtrl = myApp.controller('TableCtrl', function ($scope, $filter, filtere
 //$scope is standard service provided by framework
 //If we want to use standard $Filter, It also needs to be injected
 //filteredService - custom created by me
-TableCtrl.$inject = ['$scope', '$filter', 'filteredListService', 'dataService'];
+TableCtrl.$inject = ['$scope', '$filter', 'filterService', 'dataService'];
